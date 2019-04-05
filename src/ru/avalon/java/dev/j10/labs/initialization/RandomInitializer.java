@@ -17,12 +17,12 @@ import java.util.Random;
  */
 public class RandomInitializer implements Initializer {
 
-    private final int minLimit;
-    private final int maxLimit;
+    private final int MIN_LIMIT;
+    private final int MAX_LIMIT;
 
-    public RandomInitializer(int minLimit, int maxLimit) {
-        this.minLimit = minLimit;
-        this.maxLimit = maxLimit;
+    public RandomInitializer(int MIN_LIMIT, int MAX_LIMIT) {
+        this.MIN_LIMIT = MIN_LIMIT;
+        this.MAX_LIMIT = MAX_LIMIT;
     }
 
     private final Random random = new Random();
@@ -37,7 +37,7 @@ public class RandomInitializer implements Initializer {
     public void initialize(int[] array) {
 
         for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(maxLimit - minLimit) + minLimit;
+            array[i] = random.nextInt(MAX_LIMIT - MIN_LIMIT) + MIN_LIMIT;
         }
 
     }
